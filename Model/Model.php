@@ -23,9 +23,10 @@
 			
 			
 			if($this->_pdo == null){
-				$dsn = 'mysql:host=192.168.16.25;dbname=redis';
+				//$dsn = 'mysql:host=192.168.16.25;dbname=redis';
+				$dsn = 'mysql:host=localhost;dbname=redis';
 				try{
-					$this->_pdo = new PDO($dsn, 'root', '');
+					$this->_pdo = new PDO($dsn, 'root', 'root');
 				}catch(PDOException $e){
 					echo '数据库链接失败' . $e->getMessage();
 					exit;

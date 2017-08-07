@@ -4,8 +4,6 @@
 /**********************************************
 * 抢购模块
 *
-* @author liubin
-* @date 2016-02-10
 *
 * ab -n 1000 -c 100 http://192.168.16.73/Seckill/buy.php
 *
@@ -47,9 +45,7 @@ class seckill extends common
 
 	/*
 	 * 秒杀API
-	 * 
-	 * @author liubin
-	 * @date 2017-02-10
+	 *
 	*/
 	public function addQsec(){
 
@@ -78,9 +74,7 @@ class seckill extends common
 
 	/*
 	 * 获取错误信息
-	 * 
-	 * @author liubin
-	 * @date 2017-02-10
+	 *
 	*/
 	public function getError(){
 		return $this->_error;
@@ -92,8 +86,6 @@ class seckill extends common
 	 * 基于mysql验证库存信息
 	 * @desc 高并发下会导致超卖
 	 *
-	 * @author liubin
-	 * @date 2017-02-10
 	*/
 	protected function order_check_mysql($gid){
 
@@ -154,8 +146,6 @@ class seckill extends common
 	 * 基于redis队列验证库存信息
 	 * @desc Redis是底层是单线程的,命令执行是原子操作,包括lpush,lpop等.高并发下不会导致超卖
 	 *
-	 * @author liubin
-	 * @date 2017-02-10
 	*/
 	protected function order_check_redis($gid){
 
@@ -194,10 +184,6 @@ class seckill extends common
 	/*
 	 * 基于mysql事务验证库存信息
 	 * @desc 事务 和 行锁 模式,高并发下不会导致超卖，但效率会慢点
-	 * @author liubin
-	 * @date 2017-02-10
-	 
-	 
 	 说明：
 	 如果$sql_forlock不加写锁，并发时，$sql_forlock查询的记录存都大于0，可以减库存操作.
 	 如果$sql_forlock加了写锁，并发时，$sql_forlock查询是等待第一次链接释放后查询.所以库存最多就是5

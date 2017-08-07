@@ -9,9 +9,7 @@
 
 		/*
 		 * 渲染页面
-		 * 
-		 * @author liubin
-		 * @date 2016-02-10
+		 *
 		 *
 		*/
 		protected function render($view='',$data=[]){
